@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView resultText;
@@ -75,12 +77,27 @@ public class MainActivity extends AppCompatActivity {
 
         double bmi = weightInKg / MyUtils.myPow(heightInMeters, 2);
 
-        String bmiTextResult = String.valueOf(bmi);
+        displayResult(bmi);
+    }
 
-        resultText.setText("BMI: " + bmiTextResult);
+    private void displayResult(double bmi) {
+        DecimalFormat myDecimalFormatter = new DecimalFormat("0.00");
+        String bmiTextResult = myDecimalFormatter.format(bmi);
+
+        String result = "";
+        if (bmi < 18.5) {
+            result = bmiTextResult + " - you are underweight";
+        } else if (bmi > 25) {
+            result = bmiTextResult + " - you are overweiht";
+        } else {
+            result = bmiTextResult + " - you are healthy";
+        }
+
+        resultText.setText("BMI: " + result);
     }
 
 }
+
 
 
 class MyUtils {
