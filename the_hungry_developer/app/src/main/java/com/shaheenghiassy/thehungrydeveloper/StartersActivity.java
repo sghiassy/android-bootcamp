@@ -18,9 +18,30 @@ public class StartersActivity extends AppCompatActivity {
 
         startersList = findViewById(R.id.list_view_starters);
 
+        Dish[] dishez = {
+                new Dish("Starters", "", 4),
+                new Dish("Mains", "", 4),
+                new Dish("A", "", 4),
+                new Dish("B", "", 4),
+                new Dish("C", "", 4),
+                new Dish("D", "", 4),
+                new Dish("E", "", 4),
+                new Dish("F", "", 4),
+                new Dish("G", "", 4),
+                new Dish("H", "", 4),
+                new Dish("I", "", 4),
+                new Dish("J", "", 4),
+                new Dish("K", "", 4),
+                new Dish("L", "", 4),
+                new Dish("M", "", 4),
+                new Dish("N", "", 4),
+                new Dish("O", "", 4),
+                new Dish("P", "", 4),
+                new Dish("Q", "", 4),
+                new Dish("R", "", 4),
 
-        String[] dishes = {"Starters", "Mains", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"};
-        ArrayAdapter<String> dishesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dishes);
+        };
+        ArrayAdapter<Dish> dishesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dishez);
         startersList.setAdapter(dishesAdapter);
 
     }
